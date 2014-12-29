@@ -33,15 +33,6 @@ small, .font_small {font-size: 0.707em;}
 
 img { max-width: 100%; }
 
-.cf:before,
-.cf:after {
-  content: " ";
-  display: table;
-}
-
-.cf:after { clear: both; }
-.cf { *zoom: 1; }
-
 a {
   color: #27ae60;
   text-decoration: none;
@@ -54,33 +45,47 @@ a:hover {
   max-width: 60em;
   margin: 0 auto;
 }
-
 @media (max-width: 60em) {
   .container {
     padding-left: 1em;
     padding-right: 1em;
   }
 }
-
 @media (min-width: 60em) {
-  .col-big {
-    width: 65%;
-    float: left;
-  }
+.col-big {
+  width: 65%;
+  float: left;
+}
 
-  aside {
-    background-image: linear-gradient(to bottom, #fff, #ddd);
-    padding: 1em 2%;
-    width: 34%;
-    float: right;
-    border-radius: 0.25em;
-    box-shadow: 4px 5px 0 0 rgba(0, 0, 0, 0.27);
-  }
-  
-  .pull-right {
-    float: right;
-    display: block;
-    margin-left: 1em;
-    margin-bottom: 1em;
-  }
+aside {
+  background-image: linear-gradient(to bottom, #fff, #ddd);
+  padding: 1em 2%;
+  width: 34%;
+  float: right;
+  border-radius: 0.25em;
+  box-shadow: 4px 5px 0 0 rgba(0, 0, 0, 0.27);
+ }
+ .no-cssgradients aside { background: white; }
+ .pull-right {
+   float: right;
+   display: block;
+   margin-left: 1em;
+   margin-bottom: 1em;
+ }
+}
+
+
+
+
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
 }
